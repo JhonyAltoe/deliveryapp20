@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Table, Form } from 'react-bootstrap';
 import SelectSellers from './SelectSellers';
 
 function ClientCheckoutAddress() {
@@ -16,11 +17,17 @@ function ClientCheckoutAddress() {
   };
 
   return (
-
-    <table className="client-checkout-address">
+    <Table
+      className="client-checkout-address"
+      striped
+      bordered
+      hover
+      size="sm"
+      responsive
+    >
       <thead>
         <tr>
-          <th>P. Vendedora Responsável</th>
+          <th>Vendedor Responsável</th>
           <th>Endereço</th>
           <th>Número</th>
         </tr>
@@ -29,13 +36,15 @@ function ClientCheckoutAddress() {
         <tr key="table">
           <td
             className="vendedora"
+            style={ { minWidth: '220px' } }
           >
             <SelectSellers />
           </td>
           <td
             className="endereco"
+            style={ { minWidth: '220px' } }
           >
-            <input
+            <Form.Control
               onChange={ getAddress }
               value={ address }
               data-testid="customer_checkout__input-address"
@@ -46,8 +55,9 @@ function ClientCheckoutAddress() {
           </td>
           <td
             className="numero"
+            style={ { minWidth: '120px' } }
           >
-            <input
+            <Form.Control
               onChange={ getNumber }
               value={ number }
               data-testid="customer_checkout__input-address-number"
@@ -58,7 +68,7 @@ function ClientCheckoutAddress() {
           </td>
         </tr>
       </tbody>
-    </table>
+    </Table>
   );
 }
 

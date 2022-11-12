@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Form } from 'react-bootstrap';
 import { requestData } from '../services/requests';
 
 function SelectSellers() {
@@ -30,18 +31,15 @@ function SelectSellers() {
   };
 
   const sellers = (
-    <div>
-      <form>
-        <select
-          data-testid="customer_checkout__select-seller"
-          value={ dropDownValue }
-          onChange={ () => getValue() }
-        >
-          {arraySellers
-            .map((el) => <option key={ el.email } value={ el.name }>{el.name}</option>)}
-        </select>
-      </form>
-    </div>
+    <Form.Select
+      size="sm"
+      data-testid="customer_checkout__select-seller"
+      value={ dropDownValue }
+      onChange={ () => getValue() }
+    >
+      {arraySellers
+        .map((el) => <option key={ el.email } value={ el.name }>{el.name}</option>)}
+    </Form.Select>
   );
   return (sellers);
 }

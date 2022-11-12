@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import { requestCheckout, setToken } from '../services/requests';
 
 function CheckOutBtn() {
@@ -42,15 +43,14 @@ function CheckOutBtn() {
   };
 
   const linkProduct = (
-    <button
+    <Button
+      className="align-self-start fw-bold"
       type="button"
       data-testid="customer_checkout__button-submit-order"
       onClick={ () => checkoutFunc() }
     >
-      <p>
-        FINALIZAR PEDIDO
-      </p>
-    </button>);
+      FINALIZAR PEDIDO
+    </Button>);
   return (linkProduct);
 }
 
