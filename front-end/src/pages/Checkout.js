@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
 import Header from '../components/Header';
 import ClientCheckoutProducts from '../components/ClientCheckoutProducts';
 import ClientCheckoutAddress from '../components/ClientCheckoutAddress';
@@ -31,26 +32,28 @@ function Checkout() {
   return (
     <div className="checkout-body">
       <Header />
-      <br />
-      <div className="finalize-order">
-        <h2>Finalizar pedido</h2>
-        <ClientCheckoutProducts
-          productsArray={ arrayProducts }
-          formatPrice={ formatPrice }
-          onClick={ handleRemove }
-        />
-        <h3
-          data-testid="customer_checkout__element-order-total-price"
-        >
-          {`Total: ${formatPrice(totalValue)}`}
-
-        </h3>
-      </div>
-      <div className="details-and-delivery-addres">
-        <h2>Detalhes e Endereço para Entrega</h2>
-        <ClientCheckoutAddress />
-        <CheckOutBtn />
-      </div>
+      <Container>
+        <div className="finalize-order d-flex flex-column">
+          <h2>Finalizar pedido</h2>
+          <ClientCheckoutProducts
+            productsArray={ arrayProducts }
+            formatPrice={ formatPrice }
+            onClick={ handleRemove }
+          />
+          <p
+            data-testid="customer_checkout__element-order-total-price"
+            className="align-self-end pe-1 fw-bold"
+            style={ { fontSize: '1.5rem' } }
+          >
+            {`Total: ${formatPrice(totalValue)}`}
+          </p>
+        </div>
+        <div className="details-and-delivery-addres finalize-order d-flex flex-column">
+          <h2>Detalhes e Endereço para Entrega</h2>
+          <ClientCheckoutAddress />
+          <CheckOutBtn />
+        </div>
+      </Container>
     </div>
   );
 }

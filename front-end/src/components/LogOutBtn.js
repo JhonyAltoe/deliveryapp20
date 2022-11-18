@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Nav } from 'react-bootstrap';
+import { Nav, CloseButton } from 'react-bootstrap';
 
 function LogOutBtn() {
   const history = useHistory();
@@ -16,7 +16,7 @@ function LogOutBtn() {
       data-testid="customer_products__element-navbar-link-logout"
       onClick={ clearLocalStorage }
     >
-      Sair
+      <CloseButton aria-label="Hide" />
     </Nav.Link>
   );
   return (linkProduct);

@@ -1,0 +1,41 @@
+.order-row {
+  margin-bottom: 100px;
+}
+
+.order-card {
+  margin: auto;
+  width: 280px;
+}
+
+.order-col-status {
+  background-color: gray;
+  width: 90px;
+}
+
+.order-card-date {
+  margin-bottom: 12px;
+}
+
+.order-card-cel-info {
+  background-color: rgb(227, 252, 246);
+}
+
+.order-border-radius-l {
+  border-radius: 5px 0 0 5px;
+}
+
+.order-border-radius-r {
+  border-radius: 0 5px 5px 0;
+}
+
+.order-preparando {
+  background-color: rgb(102, 204, 0);
+}
+
+.order-pendente {
+  background-color: rgb(204, 184, 0);
+}
+
+.order-entregue {
+  background-color: rgb(0, 204, 155);
+}

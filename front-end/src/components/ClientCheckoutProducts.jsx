@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Table } from 'react-bootstrap';
+import { FaTrashAlt } from 'react-icons/fa';
 
 function ClientCheckoutProducts({
   productsArray,
@@ -9,7 +11,7 @@ function ClientCheckoutProducts({
   const verifyQty = productsArray.filter((elP) => elP.qty > 0);
 
   return (
-    <table className="score-board-table">
+    <Table className="score-board-table" striped bordered hover size="sm" responsive>
       <thead>
         <tr>
           <th>Item</th>
@@ -39,6 +41,7 @@ function ClientCheckoutProducts({
                 {index + 1}
               </td>
               <td
+                style={ { minWidth: '245px' } }
                 className="name"
                 data-testid={ `customer_checkout__element-order-table-name-${index}` }
               >
@@ -66,23 +69,23 @@ function ClientCheckoutProducts({
                 {formatPrice(price * qty)}
               </td>
               <td
-                className="removeButton"
+                className="removeButton text-center"
                 data-testid={ 'customer_checkout__element-order-table-remove-'
                 + `${index}` }
               >
-                <button
+                <FaTrashAlt
                   type="button"
                   onClick={ () => onClick(name) }
-                >
-                  Remover
-
-                </button>
+                  color="red"
+                  title="remove"
+                  size={ 20 }
+                />
               </td>
             </tr>
           ))
         }
       </tbody>
-    </table>
+    </Table>
   );
 }
 
