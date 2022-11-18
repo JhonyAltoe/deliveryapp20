@@ -46,7 +46,6 @@ function CheckOutBtn() {
     <Button
       className="align-self-start fw-bold"
       type="button"
-      data-testid="customer_checkout__button-submit-order"
       onClick={ () => checkoutFunc() }
     >
       FINALIZAR PEDIDO

@@ -82,7 +82,6 @@ function ProductCard({
         <Card.Title
           className="text-center pt-2 bg-light rounded-top"
           style={ { height: '56px' } }
-          data-testid={ `customer_products__element-card-title-${item.id}` }
         >
           {item.name}
 
@@ -92,17 +91,13 @@ function ProductCard({
           style={ { maxWidth: '214px', maxHeight: '214px', overflow: 'hidden' } }
         >
           <Card.Img
-            data-testid={ `customer_products__img-card-bg-image-${item.id}` }
             src={ item.urlImage }
             alt="verificar depois"
             style={ { maxHeight: '214px' } }
           />
         </div>
         <Card.Body className="d-flex bg-light rounded-bottom">
-          <Card.Text
-            data-testid={ `customer_products__element-card-price-${item.id}` }
-            className="text-center fw-bold m-0"
-          >
+          <Card.Text className="text-center fw-bold m-0">
             {parseFloat(oldValue)
               .toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
 
@@ -116,7 +111,6 @@ function ProductCard({
               className="btn-danger ms-auto fw-bold fs-4 py-0 lh-1"
               name={ item.name }
               onClick={ handleColumnMinus }
-              data-testid={ `customer_products__button-card-rm-item-${item.id}` }
               type="button"
             >
               -
@@ -127,13 +121,11 @@ function ProductCard({
               value={ inputValue }
               onChange={ onChangeHandler }
               size="1"
-              data-testid={ `customer_products__input-card-quantity-${item.id}` }
             />
             <Button
               className="btn-success fw-bold fs-4 py-0 lh-1"
               name={ item.name }
               onClick={ handleColumnPlus }
-              data-testid={ `customer_products__button-card-add-item-${item.id}` }
               type="button"
             >
               +

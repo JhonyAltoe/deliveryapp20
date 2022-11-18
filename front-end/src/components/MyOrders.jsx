@@ -65,7 +65,6 @@ function MyOrders() {
                 className="d-flex flex-row order-card shadow"
               >
                 <div
-                  data-testid={ `customer_orders__element-order-id-${index + 1}` }
                   className="text-center d-flex align-items-center px-2 bg-white
                   order-border-radius-l"
                 >
@@ -80,9 +79,6 @@ function MyOrders() {
                   order-border-radius-r"
                 >
                   <Col
-                    data-testid={
-                      `customer_orders__element-delivery-status-${index + 1}`
-                    }
                     className={ `col-6 d-flex align-items-center justify-content-center
                     order-col-status rounded h6 m-0 ${styleStatus}` }
                   >
@@ -90,14 +86,12 @@ function MyOrders() {
                   </Col>
                   <Col className="col-6 p-0 d-flex flex-column justify-content-between">
                     <div
-                      data-testid={ `customer_orders__element-order-date-${index + 1}` }
                       className="col-12 rounded order-card-date ps-1 order-card-cel-info
                       h6"
                     >
                       {`${dateFormat(order.saleDate)}`}
                     </div>
                     <div
-                      data-testid={ `customer_orders__element-card-price-${index + 1}` }
                       className="col-12 rounded ps-1 order-card-cel-info h6 m-0"
                     >
                       {`${moneyBrFormat(order.totalPrice)}`}

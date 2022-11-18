@@ -25,34 +25,24 @@ export default function FunctionCustomerOrderDetails() {
     <div>
       { currOrder && (
         <div>
-          <p
-            data-testid="customer_order_details__element-order-details-label-order-id"
-          >
+          <p>
             { currOrder.id }
           </p>
           <br />
-          <p
-            data-testid="customer_order_details__element-order-details-label-seller-name"
-          >
+          <p>
             {value}
           </p>
           <br />
-          <p
-            data-testid="customer_order_details__element-order-details-label-order-date"
-          >
+          <p>
             { moment(currOrder.saleDate).locale('pt-br').format('DD/MM/YYYY') }
           </p>
           <br />
-          <p
-            data-testid={ 'customer_order_details__'
-              + 'element-order-details-label-delivery-status' }
-          >
+          <p>
             { currOrder.status }
           </p>
           <br />
           <button
             type="button"
-            data-testid="customer_order_details__button-delivery-check"
             disabled={ currOrder.status !== 'Em Trânsito' }
           >
             Marcar como entregue
@@ -80,40 +70,25 @@ export default function FunctionCustomerOrderDetails() {
           </tr>
         </thead>
         {
-          product.map((prod, index) => (
+          product.map((prod) => (
             <tbody
               key={ prod.id }
             >
-              <th
-                data-testid={ 'customer_order_details__element-'
-                + `order-table-item-number-${index}` }
-              >
+              <th>
                 {prod.id}
               </th>
-              <th
-                data-testid={ 'customer_order_details__element-'
-                 + `order-table-name-${index}` }
-              >
+              <th>
                 {prod.name}
               </th>
-              <th
-                data-testid={ 'customer_order_details__element-order'
-                 + `-table-quantity-${index}` }
-              >
+              <th>
                 {prod.quantity}
               </th>
-              <th
-                data-testid={ 'customer_order_details__element-order'
-                 + `-table-unit-price-${index}` }
-              >
+              <th>
                 {
                   `${formatPrice(prod.price)}`
                 }
               </th>
-              <th
-                data-testid={ 'customer_order_details__element-order-'
-                + `table-sub-total-${index}` }
-              >
+              <th>
                 {
                   `${formatPrice(prod.price * prod.quantity)}`
                 }
@@ -123,9 +98,7 @@ export default function FunctionCustomerOrderDetails() {
         }
       </table>
 
-      <div
-        data-testid="customer_order_details__element-order-total-price"
-      >
+      <div>
         {
           `${formatPrice(currOrder.totalPrice)}`
         }

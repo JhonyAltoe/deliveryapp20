@@ -27,31 +27,21 @@ function FunctionSellerOrder() {
           to={ `/seller/orders/${sale.id}` }
         >
           <div>
-            <p
-              data-testid={ `seller_orders__element-order-id-${sale.id}` }
-            >
+            <p>
               { sale.id }
             </p>
-            <p
-              data-testid={ `seller_orders__element-delivery-status-${sale.id}` }
-            >
+            <p>
               { sale.status }
             </p>
-            <p
-              data-testid={ `seller_orders__element-order-date-${sale.id}` }
-            >
+            <p>
               { moment(sale.saleDate).locale('pt-br').format('DD/MM/YYYY') }
             </p>
-            <p
-              data-testid={ `seller_orders__element-card-price-${sale.id}` }
-            >
+            <p>
               {
                 `${formatPrice(sale.totalPrice)}`
               }
             </p>
-            <p
-              data-testid={ `seller_orders__element-card-address-${sale.id}` }
-            >
+            <p>
               { `${sale.deliveryAddress}, ${sale.deliveryNumber}` }
             </p>
           </div>

@@ -33,7 +33,6 @@ function SelectSellers() {
   const sellers = (
     <Form.Select
       size="sm"
-      data-testid="customer_checkout__select-seller"
       value={ dropDownValue }
       onChange={ () => getValue() }
     >

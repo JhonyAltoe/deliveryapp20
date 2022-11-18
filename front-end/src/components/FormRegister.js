@@ -58,7 +58,6 @@ function FormRegister() {
           id="name"
           onChange={ ({ target: { value } }) => setName(value) }
           placeholder="Seu nome"
-          data-testid="common_register__input-name"
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -69,7 +68,6 @@ function FormRegister() {
           id="email"
           onChange={ ({ target: { value } }) => setEmail(value) }
           placeholder="seu-email@site.com.br"
-          data-testid="common_register__input-email"
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -80,12 +78,10 @@ function FormRegister() {
           id="password"
           onChange={ ({ target: { value } }) => setPassword(value) }
           placeholder="******"
-          data-testid="common_register__input-password"
         />
       </Form.Group>
       <Button
         type="button"
-        data-testid="common_register__button-register"
         disabled={ !handleBtn() }
         onClick={ (event) => handleClick(event) }
       >
@@ -93,7 +89,7 @@ function FormRegister() {
       </Button>
       {
         failedTryLogin ? (
-          <p data-testid="common_register__element-invalid_register">{ errorMsg }</p>
+          <p>{ errorMsg }</p>
         ) : ''
       }
     </Form>

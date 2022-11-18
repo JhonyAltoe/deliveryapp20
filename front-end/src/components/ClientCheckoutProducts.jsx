@@ -25,54 +25,26 @@ function ClientCheckoutProducts({
       <tbody>
         {
           verifyQty.map((
-            {
-              name,
-              qty,
-              price,
-            },
+            { name, qty, price },
             index,
           ) => (
             <tr key="tableTr">
-              <td
-                className="id"
-                data-testid={ 'customer_checkout__element-order-table-item-number-'
-                 + `${index}` }
-              >
+              <td className="id">
                 {index + 1}
               </td>
-              <td
-                style={ { minWidth: '245px' } }
-                className="name"
-                data-testid={ `customer_checkout__element-order-table-name-${index}` }
-              >
+              <td style={ { minWidth: '245px' } } className="name">
                 {name}
               </td>
-              <td
-                className="quantity"
-                data-testid={ 'customer_checkout__element-order-table-quantity-'
-                + `${index}` }
-              >
+              <td className="quantity">
                 {qty}
               </td>
-              <td
-                className="unitValue"
-                data-testid={ 'customer_checkout__element-order-table-unit-price-'
-                + `${index}` }
-              >
+              <td className="unitValue">
                 {formatPrice(price)}
               </td>
-              <td
-                className="subTotal"
-                data-testid={ 'customer_checkout__element-order-table-sub-total-'
-                + `${index}` }
-              >
+              <td className="subTotal">
                 {formatPrice(price * qty)}
               </td>
-              <td
-                className="removeButton text-center"
-                data-testid={ 'customer_checkout__element-order-table-remove-'
-                + `${index}` }
-              >
+              <td className="removeButton text-center">
                 <FaTrashAlt
                   type="button"
                   onClick={ () => onClick(name) }

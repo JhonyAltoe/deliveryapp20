@@ -41,32 +41,23 @@ function ButtonDetails() {
 
   return (
     <section>
-      <p
-        data-testid="seller_order_details__element-order-details-label-order-id"
-      >
+      <p>
         {`Pedido000${seller.id}`}
 
       </p>
-      <p
-        data-testid="seller_order_details__element-order-details-label-delivery-status"
-      >
+      <p>
         {seller.status}
       </p>
-      <p
-        data-testid="seller_order_details__element-order-total-price"
-      >
+      <p>
         {moneyBrFormat(seller.totalPrice)}
       </p>
-      <p
-        data-testid="seller_order_details__element-order-details-label-order-date"
-      >
+      <p>
         {`${dateFormat(seller.saleDate)}`}
       </p>
 
       <button
         type="button"
         name="prepara-pedido"
-        data-testid="seller_order_details__button-preparing-check"
         disabled={ seller.status !== 'Pendente' }
         onClick={ onClickPrepara }
       >
@@ -75,7 +66,6 @@ function ButtonDetails() {
       <button
         type="button"
         name="despacha-pedido"
-        data-testid="seller_order_details__button-dispatch-check"
         disabled={ seller.status !== 'Preparando' }
         onClick={ onClickEntrega }
       >

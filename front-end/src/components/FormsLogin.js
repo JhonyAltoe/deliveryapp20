@@ -55,7 +55,6 @@ export default function FormsLogin() {
           onChange={ ({ target: { value } }) => setEmail(value) }
           id="email"
           placeholder="Email"
-          data-testid="common_login__input-email"
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -67,11 +66,10 @@ export default function FormsLogin() {
           onChange={ ({ target: { value } }) => setPassword(value) }
           id="senha"
           placeholder="Senha"
-          data-testid="common_login__input-password"
         />
         {
           failedTryLogin ? (
-            <Form.Text data-testid="common_login__element-invalid-email">
+            <Form.Text>
               { errorMsg }
             </Form.Text>
           ) : ''
@@ -81,7 +79,6 @@ export default function FormsLogin() {
         className="mb-3"
         type="button"
         name="login-button"
-        data-testid="common_login__button-login"
         onClick={ (event) => handleClick(event) }
         disabled={ !handleBtn() }
       >

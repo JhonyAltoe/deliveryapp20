@@ -27,44 +27,31 @@ function TableDetails() {
       </thead>
 
       {
-        table.map((ele, i) => (
-          <tbody
-            key={ ele.id }
-          >
-            <th
-              data-testid={ `seller_order_details__element-order-table-item-number-${i}` }
-            >
+        table.map((ele) => (
+          <tbody key={ ele.id }>
+            <th>
               {ele.id}
 
             </th>
-            <th
-              data-testid={ `seller_order_details__element-order-table-name-${i}` }
-            >
+            <th>
               {ele.name}
 
             </th>
-            <th
-              data-testid={ `seller_order_details__element-order-table-quantity-${i}` }
-            >
+            <th>
               {ele.quantity}
 
             </th>
-            <th
-              data-testid={ `seller_order_details__element-order-table-unit-price-${i}` }
-            >
+            <th>
               {ele.price}
 
             </th>
-            <th
-              data-testid={ `seller_order_details__element-order-table-sub-total-${i}` }
-            >
+            <th>
               {ele.price * ele.quantity}
 
             </th>
           </tbody>
         ))
       }
-
     </div>
   );
 }

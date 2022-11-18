@@ -41,7 +41,6 @@ function Checkout() {
             onClick={ handleRemove }
           />
           <p
-            data-testid="customer_checkout__element-order-total-price"
             className="align-self-end pe-1 fw-bold"
             style={ { fontSize: '1.5rem' } }
           >

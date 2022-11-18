@@ -47,7 +47,6 @@ function ClientCheckoutAddress() {
             <Form.Control
               onChange={ getAddress }
               value={ address }
-              data-testid="customer_checkout__input-address"
               type="text"
               name="input"
               placeholder="digite aqui"
@@ -60,7 +59,6 @@ function ClientCheckoutAddress() {
             <Form.Control
               onChange={ getNumber }
               value={ number }
-              data-testid="customer_checkout__input-address-number"
               type="text"
               name="input"
               placeholder="digite aqui"

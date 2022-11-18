@@ -13,7 +13,6 @@ function LogOutBtn() {
   const linkProduct = (
     <Nav.Link
       type="button"
-      data-testid="customer_products__element-navbar-link-logout"
       onClick={ clearLocalStorage }
     >
       <CloseButton aria-label="Hide" />

@@ -21,7 +21,6 @@ function ProductsBtn({ role }) {
     <Nav.Link
       type="button"
       onClick={ () => products() }
-      data-testid="customer_products__element-navbar-link-products"
     >
       PRODUTOS
     </Nav.Link>

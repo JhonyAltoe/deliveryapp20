@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 
 function OrdersBtn() {
   const linkProduct = (
-    <Link
-      data-testid="customer_products__element-navbar-link-orders"
-      to="/customer/orders"
-    >
+    <Link to="/customer/orders">
       MEUS PERDIDOS
     </Link>);
   return (linkProduct);

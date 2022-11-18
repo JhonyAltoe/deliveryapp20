@@ -18,9 +18,7 @@ function HeaderSeller() {
   return (
     <div className="buttons-content">
       <SellerOrdersBtn />
-      <h3
-        data-testid="customer_products__element-navbar-user-full-name"
-      >
+      <h3>
         {userName}
       </h3>
       <LogOutBtn />

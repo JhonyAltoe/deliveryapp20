@@ -37,13 +37,10 @@ export default function RenderCards() {
         style={ { bottom: '3%', right: '5%', zIndex: '10' } }
         className="align-self-end shadow position-fixed z-index-2 d-none d-sm-block"
         type="button"
-        data-testid="customer_products__button-cart"
         disabled={ isDisabled }
         onClick={ () => history.push('/customer/checkout') }
       >
-        <span
-          data-testid="customer_products__checkout-bottom-value"
-        >
+        <span>
           {`Ver Carrinho: ${formatPrice}`}
         </span>
       </Button>
@@ -51,15 +48,10 @@ export default function RenderCards() {
         style={ { bottom: '3%', right: '5%', zIndex: '10', fontSize: '15px' } }
         className="align-self-end shadow position-fixed z-index-2 d-sm-none d-block"
         type="button"
-        data-testid="customer_products__button-cart"
         disabled={ isDisabled }
         onClick={ () => history.push('/customer/checkout') }
       >
-        <BsCart4
-          data-testid="customer_products__checkout-bottom-value"
-          size={ 30 }
-          className="me-1"
-        />
+        <BsCart4 size={ 30 } className="me-1" />
         {formatPrice}
       </Button>
     </Container>

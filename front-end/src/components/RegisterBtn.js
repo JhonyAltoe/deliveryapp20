@@ -12,7 +12,6 @@ function RegisterBtn() {
           size="sm"
           type="button"
           name="register-button"
-          data-testid="common_login__button-register"
         >
           Ainda não tenho conta
         </Button>

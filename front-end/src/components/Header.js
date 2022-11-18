@@ -29,10 +29,7 @@ function Header() {
         <Navbar.Brand href="#home">App de Delivery</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse>
-          <Navbar.Text
-            data-testid="customer_products__element-navbar-user-full-name"
-            className="ms-auto pe-5 fw-bold"
-          >
+          <Navbar.Text className="ms-auto pe-5 fw-bold">
             {user.name}
           </Navbar.Text>
           <Nav>

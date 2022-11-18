@@ -18,7 +18,6 @@ function OrdersBtn({ role }) {
     <Nav.Link
       type="button"
       onClick={ () => myOrders() }
-      data-testid="customer_products__element-navbar-link-orders"
     >
       MEUS PEDIDOS
     </Nav.Link>);
