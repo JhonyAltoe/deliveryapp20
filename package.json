@@ -15,10 +15,10 @@
     "db:reset": "./scripts/reset-db-dev.sh",
     "db:reset:debug": "./scripts/reset-db-dev-debug.sh",
     "pretest": "npm start",
-    "test": "jest -i --forceExit --verbose --config=./jest.config.js",
-    "test:dev": "NODE_ENV=development npm run jest -i --forceExit --config=./jest.config.js",
-    "test:dev:open": "NODE_ENV=development HEADLESS=false npm run test:dev",
-    "test:dev:report": "./__tests__/reports/generate.sh"
+    "compose": "./scripts/compose.sh",
+    "compose:down": "./scripts/compose-down.sh",
+    "compose-d": "./scripts/compose-desk.sh",
+    "compose-d:down": "./scripts/compose-desk-down.sh"
   },
   "repository": {
     "type": "git",
