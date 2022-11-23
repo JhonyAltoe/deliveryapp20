@@ -2,13 +2,13 @@
 Este é um projeto full-stack feito em grupo que simula um aplicativo de delivery, nele você vai encontrar uma tela de produtos com bebidas alcoólicas onde é possível adicionar ao carrinho e ter controle das entregas. Existem três tipos de usuários e são eles o Customer, Seller e Administrator, cada um com suas respectivas permissões.
 
 ## Tecnologias utilizadas
-### Front-End
+#### Front-End
   - react
   - react-bootstrap
   - react-icons
   - react-router-dom
 
-### Back-End
+#### Back-End
   - express
   - sequelize
   - mysql
@@ -19,7 +19,7 @@ Este é um projeto full-stack feito em grupo que simula um aplicativo de deliver
   - express-async-errors
   - joi
 
-### Rodando a aplicação
+## Rodando a aplicação
 #### 1 - Após fazer o clone entre no diretório raiz se ainda não estiver feito:
 ```cd ./deliveryapp20```
 
@@ -29,8 +29,7 @@ Este é um projeto full-stack feito em grupo que simula um aplicativo de deliver
 #### 3 - Abra um container com o Docker para iniciar o banco de dados MySQL rodando o seguinte script:
 ```npm run compose```
 
-*Obs.: para a versão desktop do docker use o sequinte script*
-
+*Obs.: para a versão desktop do docker rode o sequinte script*
 ```npm run compose-d```
 
 #### 4 - Prepare o ambiênte para rodar a aplicação instalando as dependências do front-end e do back-end:
