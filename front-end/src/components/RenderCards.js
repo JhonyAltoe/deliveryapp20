@@ -23,8 +23,11 @@ export default function RenderCards() {
     .toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
 
   return (
-    <Container className="d-flex flex-column">
-      <Row xs={ 1 } sm={ 2 } md={ 3 } lg={ 4 } style={ { marginBottom: '100px' } }>
+    <Container
+      className="d-flex flex-column border border-light shadow"
+      style={ { marginBottom: '100px' } }
+    >
+      <Row xs={ 1 } sm={ 2 } md={ 3 } lg={ 4 }>
         {productsArray.map((elP, index) => (
           <ProductCard
             key={ elP.id }

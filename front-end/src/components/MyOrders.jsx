@@ -46,7 +46,7 @@ function MyOrders() {
   };
 
   return (
-    <Container>
+    <Container className="border border-light shadow">
       <Row
         className="order-row"
         xs={ 1 }
