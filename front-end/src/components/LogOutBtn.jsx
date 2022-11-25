@@ -15,7 +15,8 @@ function LogOutBtn() {
       type="button"
       onClick={ clearLocalStorage }
     >
-      <CloseButton aria-label="Hide" />
+      <CloseButton aria-label="Hide" className="d-none d-lg-block" />
+      <span className="d-lg-none">Sair</span>
     </Nav.Link>
   );
   return (linkProduct);

@@ -18,6 +18,7 @@ export default function FormsLogin() {
       // Substituimos a desconstrução do token e roles pelo data;
       const data = await requestLogin('/login', { email, password });
       setToken(data.token);
+      console.log(data);
       localStorage.setItem('user', JSON.stringify(data));
       localStorage.setItem('token', data.token);
 
@@ -28,9 +29,11 @@ export default function FormsLogin() {
       } else if (user.role === 'seller') {
         history.push('/seller/orders');
       }
+      setFailedTryLogin(true);
+      setErrorMsg('Não foi possível efetuar login');
     } catch (error) {
       setFailedTryLogin(true);
-      setErrorMsg('Não foi possível efetuar login, tente novamente');
+      setErrorMsg('Não foi possível efetuar login');
     }
   };
 
@@ -69,7 +72,7 @@ export default function FormsLogin() {
         />
         {
           failedTryLogin ? (
-            <Form.Text>
+            <Form.Text className="text-warning">
               { errorMsg }
             </Form.Text>
           ) : ''

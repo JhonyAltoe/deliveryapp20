@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import ProductsBtn from './ProductsBtn';
 import OrdersBtn from './CustomerOrdersBtn';
 import LogOutBtn from './LogOutBtn';
@@ -34,7 +34,6 @@ function Header() {
           </Navbar.Text>
           <Nav>
             {renderBtn(userRole)}
-            <NavDropdown.Divider />
             <LogOutBtn />
           </Nav>
         </Navbar.Collapse>
