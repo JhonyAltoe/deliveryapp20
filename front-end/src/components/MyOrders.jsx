@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { requestData } from '../services/requests';
 import './styles/myOrders.css';
@@ -46,63 +46,65 @@ function MyOrders() {
   };
 
   return (
-    <Row
-      className="order-row"
-      xs={ 1 }
-      md={ 2 }
-      lg={ 3 }
-      xxl={ 4 }
-    >
-      { myOrders
-        && myOrders.map((order, index) => {
-          const styleStatus = handlerStatus(order.status);
-          return (
-            <Col key={ index } className="p-0 mb-3">
-              <Card
-                type="button"
-                name="card-order-button"
-                onClick={ () => history.push(`/customer/orders/${index + 1}`) }
-                className="d-flex flex-row order-card shadow"
-              >
-                <div
-                  className="text-center d-flex align-items-center px-2 bg-white
-                  order-border-radius-l"
+    <Container>
+      <Row
+        className="order-row"
+        xs={ 1 }
+        md={ 2 }
+        lg={ 3 }
+        xxl={ 4 }
+      >
+        { myOrders
+          && myOrders.map((order, index) => {
+            const styleStatus = handlerStatus(order.status);
+            return (
+              <Col key={ index } className="p-0 mb-3">
+                <Card
+                  type="button"
+                  name="card-order-button"
+                  onClick={ () => history.push(`/customer/orders/${index + 1}`) }
+                  className="d-flex flex-row order-card shadow"
                 >
-                  <Card.Title className="h6 m-0">
-                    Pedido
-                    <br />
-                    {`000${index + 1}`}
-                  </Card.Title>
-                </div>
-                <Row
-                  className="d-flex justify-content-between w-100 m-0 p-1 bg-light
-                  order-border-radius-r"
-                >
-                  <Col
-                    className={ `col-6 d-flex align-items-center justify-content-center
-                    order-col-status rounded h6 m-0 ${styleStatus}` }
+                  <div
+                    className="text-center d-flex align-items-center px-2 bg-white
+                    order-border-radius-l"
                   >
-                    {`${order.status}`}
-                  </Col>
-                  <Col className="col-6 p-0 d-flex flex-column justify-content-between">
-                    <div
-                      className="col-12 rounded order-card-date ps-1 order-card-cel-info
-                      h6"
+                    <Card.Title className="h6 m-0">
+                      Pedido
+                      <br />
+                      {`000${index + 1}`}
+                    </Card.Title>
+                  </div>
+                  <Row
+                    className="d-flex justify-content-between w-100 m-0 p-1 bg-light
+                    order-border-radius-r"
+                  >
+                    <Col
+                      className={ `col-5 d-flex align-items-center justify-content-center
+                      order-col-status rounded h6 m-0 ${styleStatus}` }
                     >
-                      {`${dateFormat(order.saleDate)}`}
-                    </div>
-                    <div
-                      className="col-12 rounded ps-1 order-card-cel-info h6 m-0"
-                    >
-                      {`${moneyBrFormat(order.totalPrice)}`}
-                    </div>
-                  </Col>
-                </Row>
-              </Card>
-            </Col>
-          );
-        })}
-    </Row>
+                      {`${order.status}`}
+                    </Col>
+                    <Col className="col-6 p-0 d-flex flex-column justify-content-between">
+                      <div
+                        className="col-12 rounded order-card-date ps-1 order-card-cel-info
+                        h6"
+                      >
+                        {`${dateFormat(order.saleDate)}`}
+                      </div>
+                      <div
+                        className="col-12 rounded ps-1 order-card-cel-info h6 m-0"
+                      >
+                        {`${moneyBrFormat(order.totalPrice)}`}
+                      </div>
+                    </Col>
+                  </Row>
+                </Card>
+              </Col>
+            );
+          })}
+      </Row>
+    </Container>
   );
 }
 
